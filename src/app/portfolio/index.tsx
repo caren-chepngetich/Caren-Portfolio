@@ -48,7 +48,7 @@ const Portfolio = () => {
       </header>
 
       {isMobile && isMenuOpen && (
-        <nav className='flex flex-col items-center space-y-4 mt-4'>
+        <nav className='flex flex-col items-center space-y-4 mt-4 text-xl'>
           <a href='#Home' className='hover:text-purple-300'>Home</a>
           <a href='#About' className='hover:text-purple-300'>About Me</a>
           <a href='#Projects' className='hover:text-purple-300'>Projects</a>
@@ -56,12 +56,12 @@ const Portfolio = () => {
         </nav>
       )}
 
-      <main className='bg-[#4d5c73] font-serif'>
+      <main className='bg-[#4d5c73] font-serif '>
        
-      <section className="flex flex-col md:flex-row items-center justify-center p-8 md:p-20 gap-8 md:gap-[20%] bg-[#4d5c73]">
+      <section className="flex flex-col md:flex-row items-center justify-center p-8 md:p-20 gap-8 md:gap-[20%] bg-[#4d5c73] min-h-screen">
   <div className="text-center md:text-left">
     <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">
-      Hey, I&apos;m Daisy Chepkirui.<br />
+      Hello,<br /> I am Daisy Chepkirui.<br />
       <span className="font-semibold">Front-end Developer</span>
     </h1>
     <p className="text-lg text-gray-300 md:max-w-md mb-4">
@@ -74,47 +74,120 @@ const Portfolio = () => {
       </a>
     </div>
   </div>
-  <div className="mt-6 md:mt-0">
-    <Image src="/images/laptop.png" alt="Laptop" width={400} height={400} className="w-full max-w-xs md:max-w-md" />
+
+   <div className="mb-8 md:mb-0">
+      <Image 
+        src="/images/DaisyPic.jpg" 
+        alt="Daisy" 
+        width={400} 
+        height={400} 
+        className="w-60 h-60 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-full" 
+      />
+    </div>
+</section>
+
+<section className="flex flex-col items-center justify-center p-8 md:p-16 bg-gray-800 gap-8 md:gap-16">
+  <h1 className="text-4xl font-bold text-center text-white mb-8">About Me</h1>
+  <div className="flex flex-col md:flex-row justify-center items-center w-full gap-8 md:gap-80 ">
+    <div className="mb-8 md:mb-0">
+      <Image 
+        src="/images/dasiies.jpg" 
+        alt="Daisy" 
+        width={400} 
+        height={400} 
+        className="w-60 h-60 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-full" 
+      />
+    </div>
+    <div className="text-center md:text-left max-w-lg px-4">
+      <p className="text-lg sm:text-xl md:text-xl text-white">
+        As a frontend developer, I specialize in creating visually appealing and user-friendly web applications.
+        With strong expertise in HTML, CSS, and JavaScript, I build responsive designs and scalable applications
+        using frameworks like React and Next.js with Tailwind CSS.
+      </p>
+    </div>
   </div>
 </section>
 
-<section className="flex flex-col md:flex-row justify-center items-center p-8 md:p-16 bg-gray-800 gap-8 md:gap-64">
-  <div className="mb-8 md:mb-0">
-    <Image src="/images/dasiies.jpg" alt="Daisy" width={400} height={400} className="w-60 h-60 sm:w-80 sm:h-80 rounded-full" />
-  </div>
-  <div className="text-center md:text-left max-w-lg">
-    <p className="text-lg sm:text-xl text-white">
-      As a frontend developer, I specialize in creating visually appealing and user-friendly web applications.
-      With strong expertise in HTML, CSS, and JavaScript, I build responsive designs and scalable applications
-      using frameworks like React and Next.js with Tailwind CSS.
-    </p>
-  </div>
-</section>
-
+<section className="py-16 bg-gray-900">
+      <div className="container mx-auto px-4">
+        <h2 className="text-3xl font-bold text-white mb-8">
+          <span className="text-white">Skills</span>
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {[
+            { name: 'Next.js', level: 90 },
+           
+            { name: 'Javascript', level: 85 },
+            { name: 'HTML/CSS', level: 80 },
+            { name: 'UI/UX Design', level: 82 },
+            { name: 'React.js', level: 85 },
+          ].map((skill, index) => (
+            <div key={index} className="mb-4">
+              <div className="flex justify-between items-center mb-1">
+                <span className="text-xl font-medium text-white">{skill.name}</span>
+                <span className="text-xl font-medium text-white mt-8">{skill.level}%</span>
+              </div>
+              <div className="w-full rounded-full h-2.5">
+                <div
+                  className="bg-white h-2.5 rounded-full"
+                  style={{ width: `${skill.level}%` }}
+                ></div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
 
         <section id='Projects' className='p-4 bg-gray-900 text-white'>
   <h1 className='text-3xl font-bold text-center'>Projects</h1>
   <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-8 mx-auto'>
     
     <div className='text-center border border-gray-300 shadow-lg p-4 rounded-lg'> 
-      <h2 className='text-xl font-semibold text-gray-900'>Movie App</h2>
-      <Image src='/images/movies.jpeg' alt='Movie App'width={400} height={400} className='w-70 h-40 object-cover mx-auto' />
+      <h2 className='text-xl font-semibold text-white'>Movie App</h2>
+      <Image src='/images/movies.jpeg' alt='Movie App'width={400} height={400} className='w-60 h-40 object-cover mx-auto' />
       <a href="https://movie-app-assignment-steel.vercel.app/" target="_blank" rel="noopener noreferrer" 
          className="inline-block mt-4 border border-white text-white px-4 py-2 rounded hover:bg-purple-700">View Details</a>
     </div>
 
     <div className='text-center border border-gray-300 shadow-lg p-4 rounded-lg'> 
-      <h2 className='text-xl font-semibold text-gray-900'>Aquasense</h2>
+      <h2 className='text-xl font-semibold text-white'>Aquasense</h2>
       <Image src='/images/drainage.png' alt='Aquasense App'  width={400} height={400} className='w-60 h-40 object-cover mx-auto' />
       <a href="https://aquasense-project-nu.vercel.app/" target="_blank" rel="noopener noreferrer" 
          className="inline-block mt-4 border border-white text-white px-4 py-2 rounded hover:bg-purple-700">View Details</a>
     </div>
 
     <div className='text-center border border-gray-300 shadow-lg p-4 rounded-lg'> 
-      <h2 className='text-xl font-semibold text-gray-900'>Restaurant Website</h2>
+      <h2 className='text-xl font-semibold text-white'>Restaurant Website</h2>
       <Image src='/images/resort.jpeg' alt='Restaurant'  width={400} height={400} className='w-60 h-40 object-cover mx-auto' />
       <a href="https://restaurant-website-ec5i.vercel.app/" target="_blank" rel="noopener noreferrer" 
+         className="inline-block mt-4 border border-white text-white px-4 py-2 rounded hover:bg-purple-700">View Details</a>
+    </div>
+
+  </div>
+</section>
+<section id='Projects' className='p-4 bg-gray-900 text-white'>
+  
+  <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-8 mx-auto'>
+    
+    <div className='text-center border border-gray-300 shadow-lg p-4 rounded-lg'> 
+      <h2 className='text-xl font-semibold text-white'>Aquasense Dashboard</h2>
+      <Image src='/images/aquasense.png' alt='Movie App'width={400} height={400} className='w-60 h-40 object-cover mx-auto' />
+      <a href="https://zenith-dash-71cc.vercel.app/sign-up/" target="_blank" rel="noopener noreferrer" 
+         className="inline-block mt-4 border border-white text-white px-4 py-2 rounded hover:bg-purple-700">View Details</a>
+    </div>
+
+    <div className='text-center border border-gray-300 shadow-lg p-4 rounded-lg'> 
+      <h2 className='text-xl font-semibold text-white'>KICD dashbaord</h2>
+      <Image src='/images/kicd.png' alt='Aquasense App'  width={400} height={400} className='w-60 h-40 object-cover mx-auto' />
+      <a href="https://kicd-dashboard.vercel.app/" target="_blank" rel="noopener noreferrer" 
+         className="inline-block mt-4 border border-white text-white px-4 py-2 rounded hover:bg-purple-700">View Details</a>
+    </div>
+
+    <div className='text-center border border-gray-300 shadow-lg p-4 rounded-lg'> 
+      <h2 className='text-xl font-semibold text-white'>Claymart dashboard</h2>
+      <Image src='/images/claymart.jpg' alt='Restaurant'  width={400} height={400} className='w-60 h-40 object-cover mx-auto' />
+      <a href="https://claymart-dashboard-12e4.vercel.app/" target="_blank" rel="noopener noreferrer" 
          className="inline-block mt-4 border border-white text-white px-4 py-2 rounded hover:bg-purple-700">View Details</a>
     </div>
 
@@ -195,7 +268,7 @@ const Portfolio = () => {
             type="submit"
             className="w-60 border border-white text-white px-4 py-2 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
           >
-            Submit
+            Send
           </button>
         </div>
       </form>
