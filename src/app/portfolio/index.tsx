@@ -1,6 +1,7 @@
 "use client"
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
+import emailjs from "emailjs-com";
 
 const Portfolio = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -18,6 +19,28 @@ const Portfolio = () => {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
+  const formRef = useRef<HTMLFormElement>(null); // Specify the type for formRef
+
+  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => { // Add type annotation for 'e'
+    e.preventDefault();
+
+    if (formRef.current) {
+      emailjs.sendForm("daisy@1234","template_14c16vj", formRef.current, '_O-vBZP3MDO9WJuAi')
+        .then((result) => {
+          console.log('Email sent successfully:', result.text);
+          alert('Message sent successfully!');
+        }, (error) => {
+          console.error('Error sending email:', error.text);
+          alert('Failed to send message. Please try again later.');
+        });
+
+      e.currentTarget.reset(); // Optional: Reset the form after submission
+    } else {
+      console.error('Form reference is null');
+    }
+  };
+
 
   return (
     <div className='text-font-serif '>
@@ -146,6 +169,7 @@ const Portfolio = () => {
     <div className='text-center border border-gray-300 shadow-lg p-4 rounded-lg'> 
       <h2 className='text-xl font-semibold text-white'>Movie App</h2>
       <Image src='/images/movies.jpeg' alt='Movie App'width={400} height={400} className='w-60 h-40 object-cover mx-auto' />
+      
       <a href="https://movie-app-assignment-steel.vercel.app/" target="_blank" rel="noopener noreferrer" 
          className="inline-block mt-4 border border-white text-white px-4 py-2 rounded hover:bg-purple-700">View Details</a>
     </div>
@@ -218,60 +242,62 @@ const Portfolio = () => {
       </div>
 
     
-      <form id="Contact" className="w-full md:w-1/2 p-6 bg-[#1f2937] shadow-lg rounded-lg">
-        <div className="mb-3">
-          <input
-            type="text"
-            id="name"
-            name="name"
-            placeholder="Name"
-            required
-            className="w-full px-4 py-2 border border-gray-600 bg-white text-black rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-        </div>
-
-        <div className="mb-3">
-          <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="Email"
-            required
-            className="w-full px-4 py-2 border border-gray-600 bg-white text-black rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-        </div>
-
-        <div className="mb-3">
-          <input
-            type="tel"
-            id="phone"
-            name="phone"
-            placeholder="Phone Number"
-            required
-            className="w-full px-4 py-2 border border-gray-600 bg-white text-black rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-        </div>
-
-        <div className="mb-3">
-          <textarea
-            id="message"
-            name="message"
-            placeholder="Message"
-            rows={4}
-            required
-            className="w-full px-4 py-2 border border-gray-600 bg-white text-black rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-          ></textarea>
-        </div>
-
-        <div className="flex justify-center">
-          <button
-            type="submit"
-            className="w-60 border border-white text-white px-4 py-2 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          >
-            Send
-          </button>
-        </div>
-      </form>
+      <form
+      ref={formRef}
+      onSubmit={sendEmail}
+      id="Contact"
+      className="w-full md:w-1/2 p-6 bg-[#1f2937] shadow-lg rounded-lg"
+    >
+      {/* Form fields */}
+      <div className="mb-3">
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Name"
+          required
+          className="w-full px-4 py-2 border border-gray-600 bg-white text-black rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+      </div>
+      <div className="mb-3">
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Email"
+          required
+          className="w-full px-4 py-2 border border-gray-600 bg-white text-black rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+      </div>
+      <div className="mb-3">
+        <input
+          type="tel"
+          id="phone"
+          name="phone"
+          placeholder="Phone Number"
+          required
+          className="w-full px-4 py-2 border border-gray-600 bg-white text-black rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+      </div>
+      <div className="mb-3">
+        <textarea
+          id="message"
+          name="message"
+          placeholder="Message"
+          rows={4}
+          required
+          className="w-full px-4 py-2 border border-gray-600 bg-white text-black rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+        ></textarea>
+      </div>
+      <div className="flex justify-center">
+        <button
+          type="submit"
+          className="w-60 border border-white text-white px-4 py-2 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        >
+          Send
+        </button>
+      </div>
+    </form>
     </div>
   </div>
 </section>
