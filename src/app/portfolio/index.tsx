@@ -20,9 +20,9 @@ const Portfolio = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const formRef = useRef<HTMLFormElement>(null); // Specify the type for formRef
+  const formRef = useRef<HTMLFormElement>(null); 
 
-  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => { // Add type annotation for 'e'
+  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => { 
     e.preventDefault();
 
     if (formRef.current) {
@@ -35,7 +35,7 @@ const Portfolio = () => {
           alert('Failed to send message. Please try again later.');
         });
 
-      e.currentTarget.reset(); // Optional: Reset the form after submission
+      e.currentTarget.reset(); 
     } else {
       console.error('Form reference is null');
     }
@@ -175,16 +175,16 @@ const Portfolio = () => {
     </div>
 
     <div className='text-center border border-gray-300 shadow-lg p-4 rounded-lg'> 
-      <h2 className='text-xl font-semibold text-white'>Aquasense</h2>
+      <h2 className='text-xl font-semibold text-white'>Aquasense Informational website</h2>
       <Image src='/images/drainage.png' alt='Aquasense App'  width={400} height={400} className='w-60 h-40 object-cover mx-auto' />
       <a href="https://aquasense-project-nu.vercel.app/" target="_blank" rel="noopener noreferrer" 
          className="inline-block mt-4 border border-white text-white px-4 py-2 rounded hover:bg-purple-700">View Details</a>
     </div>
 
     <div className='text-center border border-gray-300 shadow-lg p-4 rounded-lg'> 
-      <h2 className='text-xl font-semibold text-white'>Restaurant Website</h2>
-      <Image src='/images/resort.jpeg' alt='Restaurant'  width={400} height={400} className='w-60 h-40 object-cover mx-auto' />
-      <a href="https://restaurant-website-ec5i.vercel.app/" target="_blank" rel="noopener noreferrer" 
+      <h2 className='text-xl font-semibold text-white'>Coffee Website</h2>
+      <Image src='/images/coffee website.png' alt='Restaurant'  width={400} height={400} className='w-60 h-40 object-cover mx-auto' />
+      <a href="https://coffee-website-flax-ten.vercel.app/" target="_blank" rel="noopener noreferrer" 
          className="inline-block mt-4 border border-white text-white px-4 py-2 rounded hover:bg-purple-700">View Details</a>
     </div>
 
@@ -202,9 +202,9 @@ const Portfolio = () => {
     </div>
 
     <div className='text-center border border-gray-300 shadow-lg p-4 rounded-lg'> 
-      <h2 className='text-xl font-semibold text-white'>KICD dashbaord</h2>
-      <Image src='/images/kicd.png' alt='Aquasense App'  width={400} height={400} className='w-60 h-40 object-cover mx-auto' />
-      <a href="https://kicd-dashboard.vercel.app/" target="_blank" rel="noopener noreferrer" 
+      <h2 className='text-xl font-semibold text-white'>hazina Investment</h2>
+      <Image src='/images/images (2).jpeg' alt='Aquasense App'  width={400} height={400} className='w-60 h-40 object-cover mx-auto' />
+      <a href="https://hazina-one.vercel.app/" target="_blank" rel="noopener noreferrer" 
          className="inline-block mt-4 border border-white text-white px-4 py-2 rounded hover:bg-purple-700">View Details</a>
     </div>
 
