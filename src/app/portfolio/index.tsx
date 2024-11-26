@@ -209,7 +209,7 @@ const Portfolio = () => {
     </div>
 
     <div className='text-center border border-gray-300 shadow-lg p-4 rounded-lg'> 
-      <h2 className='text-xl font-semibold text-white'>Restaurant</h2>
+      <h2 className='text-xl font-semibold text-white'>Restaurant Website</h2>
       <Image src='/images/resort.jpeg' alt='Restaurant'  width={400} height={400} className='w-60 h-40 object-cover mx-auto' />
       <a href="https://resort-website-mpdl.vercel.app/" target="_blank" rel="noopener noreferrer" 
          className="inline-block mt-4 border border-white text-white px-4 py-2 rounded hover:bg-purple-700">View Details</a>
