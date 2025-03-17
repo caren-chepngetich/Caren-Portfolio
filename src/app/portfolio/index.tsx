@@ -46,7 +46,7 @@ const Portfolio = () => {
     <div className='text-font-serif '>
       <header className='flex items-center justify-between p-4 bg-[#3b485b] text-2xl text-white'>
         <div className='flex items-center space-x-2'>
-          <Image src='/images/DC logo.png' alt='Logo' width={40} height={40} className='w-12' />
+          <Image src='/images/carenlogo.png' alt='Logo' width={80} height={80} className='w-12' />
         </div>
 
         {isMobile ? (
