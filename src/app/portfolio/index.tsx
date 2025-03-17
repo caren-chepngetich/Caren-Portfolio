@@ -84,7 +84,7 @@ const Portfolio = () => {
       <section className="flex flex-col md:flex-row items-center justify-center p-8 md:p-20 gap-8 md:gap-[20%] bg-[#4d5c73] min-h-screen">
   <div className="text-center md:text-left">
     <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">
-      Hello,<br /> I am Daisy Chepkirui.<br />
+      Hello,<br /> I am Caren Chepngetich.<br />
       <span className="font-semibold">Front-end Developer</span>
     </h1>
     <p className="text-lg text-gray-300 md:max-w-md mb-4">
@@ -100,8 +100,8 @@ const Portfolio = () => {
 
    <div className="mb-8 md:mb-0">
       <Image 
-        src="/images/DaisyPic.jpg" 
-        alt="Daisy" 
+        src="/images/caren.jpg" 
+        alt="Caren" 
         width={400} 
         height={400} 
         className="w-60 h-60 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-full" 
@@ -114,8 +114,8 @@ const Portfolio = () => {
   <div className="flex flex-col md:flex-row justify-center items-center w-full gap-8 md:gap-80 ">
     <div className="mb-8 md:mb-0">
       <Image 
-        src="/images/dasiies.jpg" 
-        alt="Daisy" 
+        src="/images/caren.jpg" 
+        alt="Caren" 
         width={400} 
         height={400} 
         className="w-60 h-60 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-full" 
@@ -232,11 +232,11 @@ const Portfolio = () => {
           </div>
           <div>
             <h2 className="font-semibold text-xl">Email</h2>
-            <p className="text-lg">daisychepkiruih@gmail.com</p>
+            <p className="text-lg">chepngetichkosgeicarenn@gmail.com</p>
           </div>
           <div>
             <h2 className="font-semibold text-xl">Phone Number</h2>
-            <p className="text-lg">+254748064111</p>
+            <p className="text-lg">+254795966265</p>
           </div>
         </div>
       </div>
